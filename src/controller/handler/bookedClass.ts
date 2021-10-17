@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-import { BookedClassSlot } from '../../interfaces/bookedClass';
 import { BookedClassSlotsMock } from '../../mocks/bookedClassSlots';
 import { randomBytes } from 'crypto';
 import loggers from '../../lib/logger';
@@ -21,17 +20,18 @@ export const postCreateClassBookingRequestHandler = (
   }
 
   // Validating just against class found
-  // const validateBooking = (booking) => {
-  //   const classFound = BookedClassSlotsMock.find(
-  //     (element) => element.name === booking
-  //   );
-  //   return classFound ? true : false;
-  // };
+  const validateBooking = (booking: string): boolean => {
+    const classFound = BookedClassSlotsMock.find((element) => {
+      loggers.error(`[BookedClass] create booking failed on class validation`);
+      return element.name === booking;
+    });
+    return classFound && classFound.name ? false : true;
+  };
 
-  // if (!validateBooking(className)) {
-  //   loggers.error(`[BookedClass] create booking failed on class validation`);
-  //   throw new Error('unable to validate class');
-  // }
+  if (validateBooking(className)) {
+    loggers.error(`[BookedClass] create booking failed on class validation`);
+    throw new Error('unable to validate class');
+  }
 
   loggers.info(`[bookClass] book class success`);
   response.status(200).send({ created: 'ok' });
