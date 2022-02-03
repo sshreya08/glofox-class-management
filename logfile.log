@@ -1,0 +1,20 @@
+{"level":"info","message":"logger activated!!"}
+{"level":"info","message":"Now debug messages are written to the console!"}
+{"level":"info","message":"Glofox application is serving on port 5000."}
+{"level":"info","message":"[bookClass] book class success"}
+{"level":"info","message":"[]"}
+{"level":"info","message":"[createClass] create class success"}
+{"level":"info","message":"[createClass] get class information"}
+{"level":"info","message":"logger activated!!"}
+{"level":"info","message":"Now debug messages are written to the console!"}
+{"level":"info","message":"Glofox application is serving on port 5000."}
+{"level":"error","message":"[BookedClass] create booking failed on class validation"}
+{"level":"error","message":"[BookedClass] create booking failed on class validation"}
+{"level":"error","message":"[BookedClass] create booking failed on class validation"}
+{"level":"info","message":"[]"}
+{"level":"error","message":"[createClass] create class failed with validation of request body"}
+{"level":"info","message":"[createClass] get class information"}
+{"level":"error","message":"[BookedClass] create booking failed on class validation"}
+{"level":"error","message":"[BookedClass] create booking failed on class validation"}
+{"level":"error","message":"[BookedClass] create booking failed on class validation"}
+{"level":"info","message":"[createClass] get class information"}
